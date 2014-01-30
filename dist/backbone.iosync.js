@@ -70,7 +70,7 @@ Backbone.sync = function (method, model, options) {
   //since Backbone version 1.0.0 all events are raised in methods 'fetch', 'save', 'remove' etc
 
   var defer = $.Deferred();
-  io.emit(namespace + ':' + method, params.data, function (err, data) {
+  io.emit(namespace + ':' + method, params.data, params.url, function (err, data) {
     if (err) {
       if(options.error) options.error(err);
       defer.reject();
@@ -89,6 +89,7 @@ Backbone.sync = function (method, model, options) {
 var urlError = function() {
   throw new Error('A "url" property or function must be specified');
 };
+
 
 
 })();
