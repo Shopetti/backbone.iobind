@@ -44,7 +44,17 @@
  *
  * @name sync
  */
-Backbone.sync = function (method, model, options) {
+
+Backbone.ajaxSync = Backbone.sync;
+
+Backbone.getSyncMethod = function(model) {
+  if(model.ajaxSync)
+    return Backbone.ajaxSync;
+
+  return Backbone.socketSync;
+};
+
+Backbone.socketSync = function (method, model, options) {
   var params = _.extend({}, options)
 
   if (params.url) {
@@ -83,6 +93,13 @@ Backbone.sync = function (method, model, options) {
   model.trigger('request', model, promise, options);
   return promise;
 };
+
+// Override 'Backbone.sync' to default to socketSync,
+// the original 'Backbone.sync' is still available in 'Backbone.ajaxSync'
+Backbone.sync = function(method, model, options) {
+  return Backbone.getSyncMethod(model).apply(this, [method, model, options]);
+};
+
 
 // Throw an error when a URL is needed, and none is supplied.
 // Copy from backbone.js#1558
