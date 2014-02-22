@@ -1,4 +1,4 @@
-# Backbone.ioBind
+# Backbone.primus
 
 Backbone.ioBind allows you to bind socket.io events to backbone model & collection events.
 Also includes `backbone.iosync.js`, a drop in replacement for `Backbone.sync` that uses socket.io.
