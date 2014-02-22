@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/backbone.primus.png)](http://travis-ci.org/backbone.primus)
+[![Build Status](https://secure.travis-ci.org/Shopetti/backbone.primus.png)](http://travis-ci.org/Shopetti/backbone.primus)
 
 
 # Backbone.primus
