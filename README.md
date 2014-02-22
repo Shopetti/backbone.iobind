@@ -170,19 +170,11 @@ on the example app for instructions on how to get everything set up.
 
 In short, run `node example/app.js` from the root directory.
 
-## Other Frameworks
-
-- [Backbone.realtimeBind](https://github.com/andreisebastianc/Backbone.js-Cometd-RealtimeBind) - ioBind for CometD by [@andreisebastianc](https://github.com/andreisebastianc/).
-
-## Protip
-
-Works great with the awesome [backbone.modelbinding](https://github.com/derickbailey/backbone.modelbinding).
-
 ## Contributors
 
-Interested in contributing? Fork to get started. Contact [@logicalparadox](http://github.com/logicalparadox) if you are interested in being regular contributor.
+Interested in contributing? Fork to get started. Contact [@gkorland](http://github.com/gkorland) if you are interested in being regular contributor.
 
-* Jake Luer [[Github: @logicalparadox](http://github.com/logicalparadox)] [[Twitter: @jakeluer](http://twitter.com/jakeluer)] [[Website](http://alogicalparadox.com)]
+* Guy Korland [[Github: @gkorland](http://github.com/logicalparadox)] [[Twitter: @g_korland](http://twitter.com/g_korland)] [[Website](http://www.shopetti.com)]
 
 ## License
 
