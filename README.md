@@ -1,6 +1,6 @@
 # Backbone.primus
 
-Backbone.primus (fromked from [Backbone.ioBind](https://github.com/logicalparadox/backbone.iobind)) allows you to bind primus.io events to backbone model & collection events.
+Backbone.primus (forked from [Backbone.ioBind](https://github.com/logicalparadox/backbone.iobind)) allows you to bind primus.io events to backbone model & collection events.
 Also includes `backbone.iosync.js`, a drop in replacement for `Backbone.sync` that uses primus.
 
 Your best best for starting is to check out the [API Documentation](http://alogicalparadox.com/backbone.iobind/).
