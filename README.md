@@ -1,3 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/backbone.primus.png)](http://travis-ci.org/backbone.primus)
+
+
 # Backbone.primus
 
 Backbone.primus (forked from [Backbone.ioBind](https://github.com/logicalparadox/backbone.iobind)) allows you to bind primus.io events to backbone model & collection events.
