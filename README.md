@@ -1,6 +1,6 @@
 # Backbone.primus
 
-Backbone.ioBind allows you to bind primus.io events to backbone model & collection events.
+Backbone.primus (fromked from [Backbone.ioBind](https://github.com/logicalparadox/backbone.iobind)) allows you to bind primus.io events to backbone model & collection events.
 Also includes `backbone.iosync.js`, a drop in replacement for `Backbone.sync` that uses primus.
 
 Your best best for starting is to check out the [API Documentation](http://alogicalparadox.com/backbone.iobind/).
@@ -13,12 +13,8 @@ Your best best for starting is to check out the [API Documentation](http://alogi
 
 #### Dependancies
 
-* [Socket.io](http://socket.io/) 0.7.x || 0.8.x || 0.9.x
-* [Backbone](http://documentcloud.github.com/backbone/) 1.0.0
-
-#### Compatibility
-
-Use Backbone.ioBind < 0.4.6 for compatibility with version Backbone less then 1.0.0
+* [Primus.io](https://github.com/cayasso/primus.io) >= 2.0.0
+* [Backbone](http://documentcloud.github.com/backbone/) >= 1.0.0
 
 ### Usage
 
@@ -38,14 +34,14 @@ Or use the minimized versions.
 
 ### Where to Get Help
 
-Please post issues to [GitHub Issues](https://github.com/logicalparadox/backbone.iobind/issues).
+Please post issues to [GitHub Issues](https://github.com/Shopetti/backbone.primus/issues).
 Community forum is available at the [Google Group](https://groups.google.com/group/backboneiobind).
 
-## Using the Backbone.sync Replacement for Socket.io
+## Using the Backbone.sync Replacement for Primusso.io
 
 The Backbone.sync replacement, `backbone.iosync.js`, is a drop-in replacement for Backbone.sync that
-will make Backbone use socket.io for all normal CRUD operations. By this, anytime you `save` a model,
-`fetch` a collection, `remove` a model, or other database operation, socket.io will be used as the
+will make Backbone use primus.io for all normal CRUD operations. By this, anytime you `save` a model,
+`fetch` a collection, `remove` a model, or other database operation, primus.io will be used as the
 transport.
 
 ### Namespaces / Urls
@@ -68,7 +64,7 @@ If your url has a depth of more than one, only the first will be used. Example: 
 
 ### RPC / Callbacks
 
-This replacement assumes that you are using socket.io's RPC (callback) formula for these events.
+This replacement assumes that you are using primus.io's RPC (callback) formula for these events.
 Examine this psuedo-code:
 
 ```js
@@ -91,7 +87,7 @@ The `model` should be a JSON representation of the client-side model's attribute
 ## Using Backbone.ioBind for Custom Events
 
 The primary function for Backbone.ioBind is to make it easy to create client-side listeners
-for server-side socket.io events. The most likely use case for this is to broadcast changes
+for server-side primus.io events. The most likely use case for this is to broadcast changes
 made by one client to all other clients watching a particular data object.
 
 The example app demonstrates a very basic usage scenario. If you would like to see specific code
@@ -122,15 +118,15 @@ initialize: function () {
 The primary difference between `ioBind` on Models and Collection is the event string that is listened for.
 On models, the event string includes the Model `id`, whereas on collection it is simply the collection namespace.
 
-The above example will respond to the following socket.io events.
+The above example will respond to the following primus.io events.
 
 ```js
 // Model events
-socket.emit('todo/' + todo_obj.id + ':update', todo_obj);
-socket.emit('todo/' + todo_obj.id + ':delete', todo_obj);
+socket.send('todo/' + todo_obj.id + ':update', todo_obj);
+socket.send('todo/' + todo_obj.id + ':delete', todo_obj);
 
 // Collection events
-socket.emit('todos:create', todo_obj);
+socket.send('todos:create', todo_obj);
 ```
 
 ### Usage Guidelines
