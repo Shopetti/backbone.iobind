@@ -180,7 +180,7 @@ Interested in contributing? Fork to get started. Contact [@gkorland](http://gith
 
 (The MIT License)
 
-Copyright (c) 2011 Jake Luer <jake@alogicalparadox.com>
+Copyright (c) 2014 Shopetti <info@shopetti.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
